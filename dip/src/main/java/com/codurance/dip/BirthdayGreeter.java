@@ -18,10 +18,4 @@ public class BirthdayGreeter {
                 .map(employee -> emailFor(employee))
                 .forEach(email -> new EmailSender().send(email));
     }
-
-    private Email emailFor(Employee employee) {
-        String message = String.format("Happy birthday, dear %s!", employee.getFirstName());
-        return new Email(employee.getEmail(), "Happy birthday!", message);
-    }
-
 }
